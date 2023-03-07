@@ -21,8 +21,15 @@ namespace CMP1903M_A01_2223
             Value = value;
         }
         
+        public enum SuitType{
+            Spades = 1,
+            Clubs = 2,
+            Hearts = 3,
+            Diamonds = 4
+        
+        }
         public override string ToString(){
-        return "Suit: " + Suit + " Value: " + Value;
+        return "Suit: " + ((SuitType)Suit).ToString() + " Value: " + Value;
     }
     
     }
