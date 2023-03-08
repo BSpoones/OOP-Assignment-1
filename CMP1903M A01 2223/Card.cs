@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
-    class Card
+    public class Card
     {
         //Base for the Card class.
         //Value: numbers 1 - 13

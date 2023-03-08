@@ -9,11 +9,11 @@ namespace CMP1903M_A01_2223
 {
     public class Testing
     {
-        public Testing()
+        public static void Test()
         {
 
             Program.PACK.outputPack();
-            Program.PACK.shuffleCardPack(ShuffleType.Fisheryates);
+            Pack.shuffleCardPack(ShuffleType.Fisheryates);
             Console.WriteLine("Shuffling");
             Program.PACK.outputPack();
 

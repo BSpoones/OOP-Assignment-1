@@ -7,19 +7,19 @@ using static CMP1903M_A01_2223.CardShuffle;
 
 namespace CMP1903M_A01_2223
 {
-    class Pack
+    public class Pack
     {
-        public static List<Card> cardPack = makePack();
+        public List<Card> cardPack =  makePack();
 
         public static bool shuffleCardPack(ShuffleType shuffleType)
         {
             switch (shuffleType)
             {
                 case ShuffleType.Fisheryates:
-                    cardPack = fisherShuffle(cardPack);
+                    Program.PACK.cardPack = fisherShuffle(Program.PACK.cardPack);
                     break;
                 case ShuffleType.Riffle:
-                    cardPack = riffleShuffle(cardPack);
+                    Program.PACK.cardPack = riffleShuffle(Program.PACK.cardPack);
                     break;
                 case ShuffleType.None:
                     // Do nothing since cards is already unshuffled
@@ -44,7 +44,7 @@ namespace CMP1903M_A01_2223
             cardPack.Remove(dealtCard);
             return dealtCard;
         }
-        public static List<Card> dealCard(int amount)
+        public List<Card> dealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
             return cardPack.GetRange(0, Math.Min(amount, cardPack.Count()));
