@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static CMP1903M_A01_2223.CardShuffle;
 
 namespace CMP1903M_A01_2223
@@ -29,25 +27,25 @@ namespace CMP1903M_A01_2223
             }
             return true;
         }
-        public Card deal()
+        public static Card deal()
         {
             /*
             * Deals one card from the top of the deck
             */
 
-            if (cardPack.Count < 1)
+            if (Program.PACK.cardPack.Count < 1)
             {
                 throw new ArgumentOutOfRangeException("No cards left to deal");
             }
-            Card dealtCard = cardPack.First();
+            Card dealtCard = Program.PACK.cardPack.First();
             // Dealing a card means it is removed from the pack
-            cardPack.Remove(dealtCard);
+            Program.PACK.cardPack.Remove(dealtCard);
             return dealtCard;
         }
-        public List<Card> dealCard(int amount)
+        public static List<Card> dealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
-            return cardPack.GetRange(0, Math.Min(amount, cardPack.Count()));
+            return Program.PACK.cardPack.GetRange(0, Math.Min(amount, Program.PACK.cardPack.Count()));
         }
 
         public static List<Card> makePack()

@@ -11,16 +11,58 @@ namespace CMP1903M_A01_2223
     {
         public static void Test()
         {
+            /*
+             * Requirements for testing:
+             * 
+             * - Create pack instance
+             * - Shuffle the pack with all 3 methods
+             * - Deal 1 card
+             * - Deal x cards based on user input
+             */
 
-            Program.PACK.outputPack();
+            // Pack instance already created in Program
+
+            // Shuffling the pack
+            Console.WriteLine("Shuffling cards");
             Pack.shuffleCardPack(ShuffleType.Fisheryates);
-            Console.WriteLine("Shuffling");
-            Program.PACK.outputPack();
+            Pack.shuffleCardPack(ShuffleType.Riffle);
+            Pack.shuffleCardPack(ShuffleType.None);
 
-            Console.WriteLine("Dealing");
-            for (int i = 0; i < 10; i++)
+            // Deals one card
+            Console.WriteLine(Pack.deal().ToString());
+
+            // Dealing x cards
+            int cardCount;
+            while (true)
             {
-                Console.WriteLine(Program.PACK.deal().ToString());
+                try
+                {
+                    // Taking user input
+                    Console.WriteLine("Select number of cards to deal: ");
+                    cardCount = int.Parse(Console.ReadLine());
+
+                    // Value check
+                    if (0 < cardCount && cardCount <= Program.PACK.cardPack.Count())
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        throw new ArgumentOutOfRangeException("Invalid number of cards");
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+            }
+
+            // Fetching cards
+            List<Card> dealtCards = Pack.dealCard(cardCount);
+            Console.WriteLine($"Showing all {cardCount} card{(cardCount > 1 ? "s" : "")}");
+            foreach (Card dealtCard in dealtCards)
+            {
+                Console.WriteLine(dealtCard.ToString());
             }
         }
     }

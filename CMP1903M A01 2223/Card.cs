@@ -29,7 +29,8 @@ namespace CMP1903M_A01_2223
         
         }
         public override string ToString(){
-        return "Suit: " + ((SuitType)Suit).ToString() + " Value: " + Value;
+            return $"Card: {Value} of {((SuitType)Suit).ToString()}";
+
     }
     
     }
