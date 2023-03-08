@@ -13,7 +13,7 @@ namespace CMP1903M_A01_2223
         {
 
             Program.PACK.outputPack();
-            Program.PACK.shuffleCardPack(ShuffleType.FISHERYATES);
+            Program.PACK.shuffleCardPack(ShuffleType.Fisheryates);
             Console.WriteLine("Shuffling");
             Program.PACK.outputPack();
 
