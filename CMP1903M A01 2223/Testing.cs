@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static CMP1903M_A01_2223.CardShuffle;
 
 namespace CMP1903M_A01_2223
@@ -11,7 +9,8 @@ namespace CMP1903M_A01_2223
     {
         public static void Test()
         {
-            /*
+            /* Testing Function, responsible for all areas of testing
+             * 
              * Requirements for testing:
              * 
              * - Create pack instance
@@ -53,17 +52,14 @@ namespace CMP1903M_A01_2223
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.ToString());
+                    Console.WriteLine(e.Message);
                 }
             }
 
             // Fetching cards
             List<Card> dealtCards = Pack.dealCard(cardCount);
-            Console.WriteLine($"Showing all {cardCount} card{(cardCount > 1 ? "s" : "")}");
-            foreach (Card dealtCard in dealtCards)
-            {
-                Console.WriteLine(dealtCard.ToString());
-            }
+            Console.WriteLine($"Showing {cardCount} card{(cardCount > 1 ? "s" : "")}");
+            Pack.OutputPack(dealtCards);
         }
     }
 }

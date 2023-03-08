@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
     public class CardShuffle
+    /*
+     * This class contains 2 shuffle algorithms
+     * Fisher-Yates shuffle and Riffle shuffle
+     * Contains enum to convert shuffle type to int
+     */
     {
         public enum ShuffleType
         {

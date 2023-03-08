@@ -6,10 +6,23 @@ using static CMP1903M_A01_2223.CardShuffle;
 namespace CMP1903M_A01_2223
 {
     public class Pack
+    /*
+     * Pack class
+     * 
+     * This class contains functions to create a card pack,
+     * as well as shuffle and deal cards.
+     */
     {
         public List<Card> cardPack =  makePack();
 
         public static bool shuffleCardPack(ShuffleType shuffleType)
+        /*
+         * Shuffles the card pack using the chosen shuffle method.
+         * Uses the 3 available shuffle methods:
+         * - Fisher-Yates shuffle (https://en.wikipedia.org/wiki/Fisher–Yates_shuffle)
+         * - Riffle shuffle (https://www.youtube.com/watch?v=o-KBNdbJOGk)
+         * - No shuffle
+         */
         {
             switch (shuffleType)
             {
@@ -64,7 +77,7 @@ namespace CMP1903M_A01_2223
             }
             return cardPack;
         }
-        public void outputPack()
+        public static void OutputPack(List<Card> cardPack)
         {
             foreach (Card card in cardPack)
             {
