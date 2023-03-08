@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
-    class Program
+    public class Program
     {
+        public static readonly Pack PACK = new Pack();
         static void Main(string[] args)
         {
-            Testing.Test();
+            
+            Testing.Testing();
         }
     }
 }

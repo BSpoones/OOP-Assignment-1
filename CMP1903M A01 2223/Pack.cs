@@ -11,17 +11,17 @@ namespace CMP1903M_A01_2223
     {
         public static List<Card> cardPack = makePack();
 
-        public bool shuffleCardPack(ShuffleType shuffleType)
+        public static bool shuffleCardPack(ShuffleType shuffleType)
         {
             switch (shuffleType)
             {
-                case ShuffleType.FISHERYATES:
+                case ShuffleType.Fisheryates:
                     cardPack = fisherShuffle(cardPack);
                     break;
-                case ShuffleType.RIFFLE:
+                case ShuffleType.Riffle:
                     cardPack = riffleShuffle(cardPack);
                     break;
-                case ShuffleType.NONE:
+                case ShuffleType.None:
                     // Do nothing since cards is already unshuffled
                     break;
                 default:

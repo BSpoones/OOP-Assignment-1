@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
-    class CardShuffle
+    public class CardShuffle
     {
         public enum ShuffleType
         {
-            FISHERYATES = 1,
-            RIFFLE = 2,
-            NONE = 3
+            Fisheryates = 1,
+            Riffle = 2,
+            None = 3
         }
 
         public static List<Card> fisherShuffle(List<Card> cards)

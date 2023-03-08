@@ -9,18 +9,18 @@ namespace CMP1903M_A01_2223
 {
     public class Testing
     {
-        public static void Test()
+        public Testing()
         {
-            Pack pack = new Pack();
-            pack.outputPack();
-            pack.shuffleCardPack(ShuffleType.FISHERYATES);
+
+            Program.PACK.outputPack();
+            Program.PACK.shuffleCardPack(ShuffleType.FISHERYATES);
             Console.WriteLine("Shuffling");
-            pack.outputPack();
+            Program.PACK.outputPack();
 
             Console.WriteLine("Dealing");
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine(pack.deal().ToString());
+                Console.WriteLine(Program.PACK.deal().ToString());
             }
         }
     }
