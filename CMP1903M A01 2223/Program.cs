@@ -12,7 +12,14 @@ namespace CMP1903M_A01_2223
         public static Random random = new Random();
         static void Main(string[] args)
         {
-            Testing.Test();
+            try
+            {
+                Testing.Test();
+            }
+            catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
         }
     }
 }
