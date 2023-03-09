@@ -1,16 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
-    class Program
+    public class Program
+    /*
+     * CMP1903M OOP Assignment 1
+     * Made by Ben Soones (26511258) - March 2023
+     */
     {
+        public static readonly Pack PACK = new Pack();
+        public static Random random = new Random();
         static void Main(string[] args)
         {
-
+            try
+            {
+                Testing.Test();
+            }
+            catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
         }
     }
 }
