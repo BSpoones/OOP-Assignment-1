@@ -10,9 +10,9 @@ namespace CMP1903M_A01_2223
      */
     {
         public int Value { get; set; }
-        public int Suit { get; set; }
+        public SuitType Suit { get; set; }
 
-        public Card(int suit, int value)
+        public Card(SuitType suit, int value)
         
         {
             Suit = suit;
@@ -30,7 +30,7 @@ namespace CMP1903M_A01_2223
         }
         public override string ToString()
         {
-            return $"Card: {Value} of {((SuitType)Suit).ToString()}";
+            return $"Card: {Value} of {(Suit).ToString()}";
 
         }
 

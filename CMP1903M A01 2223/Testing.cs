@@ -23,9 +23,19 @@ namespace CMP1903M_A01_2223
 
             // Shuffling the pack
             Console.WriteLine("Shuffling cards");
-            Pack.shuffleCardPack(ShuffleType.Fisheryates);
-            Pack.shuffleCardPack(ShuffleType.Riffle);
-            Pack.shuffleCardPack(ShuffleType.None);
+
+            // Fisher-Yates Shuffle
+            Console.WriteLine("\nFisher-Yates shuffle");
+            Pack.shuffleCardPack(1);
+            Pack.OutputPack(Program.PACK.cardPack.GetRange(0,5));
+
+            Console.WriteLine("\nRiffle Shuffle");
+            Pack.shuffleCardPack(2);
+            Pack.OutputPack(Program.PACK.cardPack.GetRange(0, 5));
+            Console.WriteLine("\nNo Shuffle");
+            Pack.shuffleCardPack(3);
+            Pack.OutputPack(Program.PACK.cardPack.GetRange(0, 5));
+
 
             // Deals one card
             Console.WriteLine(Pack.deal().ToString());

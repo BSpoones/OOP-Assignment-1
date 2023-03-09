@@ -17,7 +17,7 @@ namespace CMP1903M_A01_2223
             None = 3
         }
 
-        public static List<Card> fisherShuffle(List<Card> cards)
+        public static bool fisherShuffle(List<Card> cards)
         {
             /*
              * Fisher-Yates shuffle works by iterating through the deck,
@@ -30,23 +30,19 @@ namespace CMP1903M_A01_2223
                 throw new ArgumentOutOfRangeException("Invalid deck length");
             }
 
-            Random random = new Random();
-
-
             for (int i = cards.Count - 1; i > 0; i--)
             {
                 // Finding a random card to swap with
-                int j = random.Next(i + 1);
+                int j = Program.random.Next(i + 1);
 
                 // Swapping the cards around
-                Card tempCard = cards[i];
-                cards[i] = cards[j];
-                cards[j] = tempCard;
+                (cards[j], cards[i]) = (cards[i], cards[j]);
             }
-            return cards;
+            Program.PACK.cardPack = cards;
+            return true;
         }
 
-        public static List<Card> riffleShuffle(List<Card> cards) { 
+        public static bool riffleShuffle(List<Card> cards) { 
             // Riffle shuffle works by splitting a deck in two, then
             // combining them one at a time from each half
 
@@ -71,9 +67,15 @@ namespace CMP1903M_A01_2223
                 shuffledCards.Add(leftHalf[i]);
                 shuffledCards.Add(rightHalf[i]);
             }
-
-            return shuffledCards;
+            Program.PACK.cardPack = shuffledCards;
+            return true;
         }
-
+        public static bool noShuffle(List<Card> cards)
+        {
+            // noShuffle method returns the cards exactly as they
+            // were given
+            Program.PACK.cardPack = cards;
+            return true;
+        }
     }
 }
